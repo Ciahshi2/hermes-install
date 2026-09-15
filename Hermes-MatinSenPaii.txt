@@ -1,0 +1,46 @@
+نصب Node JS:
+
+https://nodejs.org/en/download
+
+
+نصب Hermes:
+Linux / macOS / WSL2:
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+
+Mac:
+source ~/.zshrc
+Linux/Wsl:
+source ~/.bashrc
+
+Windows:
+iex (irm https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.ps1)
+
+or
+
+https://hermes-agent.nousresearch.com/
+
+Telegram:
+@BotFather
+@userinfobot
+
+
+9Router on Linux:
+
+sudo apt update && sudo apt upgrade -y
+curl -fsSL https://get.docker.com | sh
+sudo systemctl enable --now docker
+
+docker run -d \
+  --name 9router \
+  -p 20128:20128 \
+  -v "$HOME/.9router:/app/data" \
+  -e DATA_DIR=/app/data \
+  -e JWT_SECRET="change-this-to-a-long-random-secret" \
+  -e INITIAL_PASSWORD="your-strong-dashboard-password" \
+  decolua/9router:latest
+
+داشبورد:
+hermes dashboard --host 0.0.0.0 --port 12000
+
+
+
